@@ -43,30 +43,31 @@ void updateStudent(num rollNo, String newName, String field) {
 }
 
 void main() {
-  // For view All student List call
-  // printStudentList();
+  print(
+      "For add new student in List Enter 1 and send data like this Name: Muhammad Khubaib, field: MERN Stack, rollNo: 23456");
+  print('');
+  print("For view All student List enter: 2");
+  print('');
+  print("For delete Student enter 3 and enter Student Roll");
+  print('');
+  print(
+      "For Update Student enter 4 then enter roll number then enter name and field");
+  String prompt = stdin.readLineSync()!;
 
-  // For add new student in List call and send data like this
-  // create("Muhammad Khubaib", "MERN", 23456);
+  if (prompt == "1") {
+    print("Enter Name:");
+    String fullName = stdin.readLineSync()!;
+    print("Enter Field:");
+    String field = stdin.readLineSync()!;
+    print("Enter Roll No:");
+    num rollNo = num.parse(stdin.readLineSync()!);
 
-  // For delete Student call this funtion with Student Roll NO like this
-  // and again call printStudentList();
-  // forDeleteStudent(23456);
-
-  // For Update Student call this funtion and again call printStudentList();
-  // updateStudent(23458,"shaheer ahmed","Flutter");
-  print("'Student List'");
-
-  create("Muhammad Khubaib", "MERN Stack", 23456);
-  create("Muhammad Hashir", "MEAN Stack", 23457);
-  create("Muhammad Hafiz", "Flutter", 23458);
-  printStudentList();
-
-  print("After removing Student:");
-  forDeleteStudent(23458);
-  printStudentList();
-
-  print("After Updating Student:");
-  updateStudent(23456,"Muhammad Khubaib","Flutter");
-  printStudentList();
+    create(fullName, field, rollNo);
+  } else if (prompt == "2") {
+    printStudentList();
+  } else if (prompt == "3") {
+  } else if (prompt == "4") {
+  } else {
+    print("Enter correct number for perform action");
+  }
 }
